@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="login-body">
+  <div class="login-container">
+    <h1>Employee Attendance System</h1>
+    <div class="login-box">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button id="loginBtn">Login</button>
+
+      <div class="divider">or</div>
+
+      <button id="faceLogin" class="face-btn">😎 Face Recognition Login</button>
+      <button id="fingerLogin" class="finger-btn">🖐️ Fingerprint Login</button>
+    </div>
+  </div>
+
+  <!-- Camera area -->
+  <div id="cameraContainer" class="camera-container">
+    <video id="camera" autoplay muted></video>
+  </div>
+
+  <div id="fingerModal" class="modal">
+    <div class="modal-content">
+      <p>Scanning fingerprint...</p>
+      <div class="finger-scan"></div>
+    </div>
+  </div>
+
+  <!-- Load face-api.js library -->
+  <script defer src="https://cdn.jsdelivr.net/npm/face-api.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

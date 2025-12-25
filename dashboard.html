@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>Employee MS</h2>
+    <ul id="menu">
+      <li class="active" data-page="dashboard">🏠 Dashboard</li>
+      <li data-page="employees">👥 Employees</li>
+      <li data-page="departments">🏢 Departments</li>
+      <li data-page="leaves">📅 Leaves</li>
+      <li data-page="salary">💰 Salary</li>
+      <li data-page="settings">⚙ Settings</li>
+    </ul>
+  </aside>
+  
+  <!-- Main Content -->
+  <main class="dashboard-main">
+    <header>
+      <div>Welcome, Admin</div>
+      <button id="logoutBtn">Logout</button>
+    </header>
+
+    <section id="contentArea">
+      <!-- Content changes dynamically here -->
+       <!-- Add Employee Modal -->
+        <!-- View Employee Modal -->
+        <div class="employee-header">
+            <h3>Manage Employees</h3>
+            <div class="employee-actions">
+                <input type="text" id="searchEmployee" placeholder="Search By Employee ID">
+                <button id="addEmployeeBtn" class="add-btn">+ Add New Employee</button>
+            </div>
+        </div>
+        <div id="viewEmployeeModal" class="modal">
+        <div class="modal-box view-box">
+            <h3>Employee Details</h3>
+            <div class="emp-detail">
+            <img id="viewImg" src="" alt="Employee" class="detail-img">
+            <div class="emp-info">
+                <p><b>Name:</b> <span id="viewName"></span></p>
+                <p><b>Employee ID:</b> <span id="viewId"></span></p>
+                <p><b>Date of Birth:</b> <span id="viewDob"></span></p>
+                <p><b>Gender:</b> <span id="viewGender"></span></p>
+                <p><b>Department:</b> <span id="viewDept"></span></p>
+                <p><b>Marital Status:</b> <span id="viewStatus"></span></p>
+            </div>
+            </div>
+            <span id="closeViewModal" class="close-btn">&times;</span>
+        </div>
+        </div>
+        <table class="employee-table">
+            <thead>
+                <tr>
+                <th>S No</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>DOB</th>
+                <th>Department</th>
+                <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be injected dynamically -->
+            </tbody>
+        </table>
+
+
+        <div id="addEmployeeModal" class="modal">
+        <div class="modal-box">
+            <h3>Add Employee</h3>
+            <form id="addEmployeeForm">
+            <div class="form-grid">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="text" placeholder="Employee ID" required>
+                <input type="date" placeholder="Date of Birth" required>
+                <select required>
+                <option value="">Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+                </select>
+                <select required>
+                <option value="">Marital Status</option>
+                <option>Single</option>
+                <option>Married</option>
+                </select>
+                <input type="text" placeholder="Designation" required>
+                <select required>
+                <option value="">Department</option>
+                <option>IT</option>
+                <option>Database</option>
+                <option>HR</option>
+                <option>Finance</option>
+                </select>
+                <input type="number" placeholder="Salary" required>
+                <input type="password" placeholder="Password" required>
+                <select required>
+                <option value="">Select Role</option>
+                <option>Admin</option>
+                <option>Manager</option>
+                <option>Employee</option>
+                </select>
+                <div class="upload">
+                <label>Upload Image:</label>
+                <input type="file" id="empImage" accept="image/*">
+                <img id="previewImg" src="" alt="" style="display:none; width:60px; height:60px; border-radius:50%; margin-top:10px;">
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">Add Employee</button>
+            </form>
+            <span id="closeModal" class="close-btn">&times;</span>
+        </div>
+        </div>
+    </section>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
